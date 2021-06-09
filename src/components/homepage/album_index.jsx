@@ -16,7 +16,6 @@ class AlbumIndex extends Component{
         if (this.props.users){
             return(
                 <>
-                <h2>Album List</h2>
                 <ul className="album-list">
                     {this.props.albums.map((album, index) => {
                         return <AlbumIndexItem
