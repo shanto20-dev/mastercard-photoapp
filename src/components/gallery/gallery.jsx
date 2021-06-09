@@ -7,30 +7,24 @@ class Gallery extends Component{
         super(props);
         this.state = {
             photos: [],
-            users: {}
+            album: {},
         }
     }
 
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/albums/')
+        fetch(`https://jsonplaceholder.typicode.com/albums/${this.props.match.params.id}`)
             .then(response => response.json())
-            .then(json => this.setState({albums: json}))
+            .then(json => this.setState({album: json}))
 
-        fetch('https://jsonplaceholder.typicode.com/users/')
+        fetch(`https://jsonplaceholder.typicode.com/albums/${this.props.match.params.id}/photos`)
             .then(response => response.json())
-            .then(json => {
-                let usersObject =  {}
-                json.forEach(user => {
-                    usersObject[user.id] = user;
-                })
-                this.setState({users: usersObject})
-            });
+            .then(json => this.setState({photos: json}));
     }
 
 
     render(){
-        if (this.state.users){
+            console.log(this.state);
             return(
                 <>
                 <div>
@@ -38,19 +32,12 @@ class Gallery extends Component{
                 </div>
 
                 <div className='album-list'>
-                    <AlbumIndex
-                        albums={this.state.albums}
-                        users={this.state.users}
-                    />
+
                 </div>
                 </>
             )
-        }else{
-            return null;
-        }
 
     }
-
 
 }
 
