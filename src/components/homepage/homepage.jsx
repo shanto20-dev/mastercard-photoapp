@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import '../../styles/homepage.css';
 import AlbumIndex from './album_index.jsx';
+import Filter from './filter.jsx';
+
 
 
 class Homepage extends Component{
@@ -34,18 +36,24 @@ class Homepage extends Component{
     render(){
         if (this.state.users){
             return(
-                <>
-                <div>
-                    <h1 className='welcome-title'>Welcome to Mastercard PhotoApp!</h1>
-                </div>
+                <div className='homepage-div'>
+                    <div>
+                        
+                    </div>
 
-                <div className='album-list'>
-                    <AlbumIndex
-                        albums={this.state.albums}
-                        users={this.state.users}
-                    />
+                    <div className='album-list'>
+                        <AlbumIndex
+                            albums={this.state.albums}
+                            users={this.state.users}
+                        />
+                    </div>
+
+                    <div>
+                        <Filter
+                            users={this.state.users}
+                        />
+                    </div>
                 </div>
-                </>
             )
         }else{
             return null;

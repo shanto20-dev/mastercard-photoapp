@@ -44,3 +44,14 @@ ul{
     align-items: flex-start;
 }
 
+.filter-div{
+    margin-top: 50%;
+    height: 400px;
+    width: 300px;
+    background-color: lightgoldenrodyellow;
+    overflow: auto;
+}
+
+.homepage-div{
+    display: flex;
+}

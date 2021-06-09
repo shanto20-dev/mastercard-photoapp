@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../../styles/navbar.css'
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component{
     constructor(props){
@@ -9,7 +10,7 @@ class Navbar extends Component{
     render(){
         return(
             <div className='navbar-div'>
-                <h1>Photo Album App</h1>
+                <Link to='/'><h1>Photo Album App</h1></Link>
             </div>
 
         )
