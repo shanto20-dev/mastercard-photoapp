@@ -8,6 +8,7 @@ class Gallery extends Component{
         this.state = {
             photos: [],
             album: {},
+            currentPhoto: 0
         }
     }
 
@@ -24,19 +25,28 @@ class Gallery extends Component{
 
 
     render(){
-            console.log(this.state);
-            return(
-                <>
-                <div>
-                    <h1 className='welcome-title'>Welcome to Mastercard PhotoApp!</h1>
-                </div>
-
-                <div className='album-list'>
-
-                </div>
-                </>
-            )
-
+            if (this.state.photos[this.state.currentPhoto]){
+                return(
+                    <>
+                    <h2>{this.state.album.title}</h2>
+                    <div className='gallery-section'>
+                        <div className='main-display'>
+                            <button className='prev-button'>Previous Photo</button>
+                            <div className='main-photo-info'>
+                                <img className='gallery-main' alt="" src={`${this.state.photos[this.state.currentPhoto].url}`}/>
+                                <h3>{this.state.photos[this.state.currentPhoto].title}</h3>
+                            </div>
+                            <button>Next Photo</button>
+                        </div>
+    
+                        {/* <GalleryIndex/> */}
+    
+                    </div>
+                    </>
+                )
+            }else{
+                return null;
+            }
     }
 
 }
