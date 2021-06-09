@@ -13,21 +13,24 @@ class AlbumIndex extends Component{
 
 
     render(){
-        console.log(this.props.users);
-        return(
-            <>
-            <h2>Album List</h2>
-            <ul className="album-list">
-                {this.props.albums.map((album, index) => {
-                    return <AlbumIndexItem
-                        key={index}
-                        album={album}
-                        users={this.props.users}
-                        />
-                })}
-            </ul>
-            </>
-        )
+        if (this.props.users){
+            return(
+                <>
+                <h2>Album List</h2>
+                <ul className="album-list">
+                    {this.props.albums.map((album, index) => {
+                        return <AlbumIndexItem
+                            key={index}
+                            album={album}
+                            user={this.props.users[album.userId]}
+                            />
+                    })}
+                </ul>
+                </>
+            )
+        }else{
+            return null;
+        }
 
     }
 

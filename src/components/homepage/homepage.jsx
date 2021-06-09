@@ -31,20 +31,24 @@ class Homepage extends Component{
 
 
     render(){
-        return(
-            <>
-            <div>
-                <h1 className='welcome-title'>Welcome to Mastercard PhotoApp!</h1>
-            </div>
+        if (this.state.users){
+            return(
+                <>
+                <div>
+                    <h1 className='welcome-title'>Welcome to Mastercard PhotoApp!</h1>
+                </div>
 
-            <div>
-                <AlbumIndex
-                    albums={this.state.albums}
-                    users={this.state.users}
-                />
-            </div>
-            </>
-        )
+                <div className='album-list'>
+                    <AlbumIndex
+                        albums={this.state.albums}
+                        users={this.state.users}
+                    />
+                </div>
+                </>
+            )
+        }else{
+            return null;
+        }
 
     }
 

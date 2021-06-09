@@ -12,20 +12,21 @@ class AlbumIndexItem extends Component{
 
 
     render(){
-        let albumOwner = this.props.users[this.props.album.userId];
-        console.log(albumOwner);
-        return(
-            <li className="album-item">
-                <h2>{this.props.album.title}</h2>
-                <img className='album-cover' alt=""/>
-                <p>Album owner: {`${albumOwner.name}`}</p>
-                <p>Email: {`${albumOwner.email}`}</p>
-                <p>Website: {`${albumOwner.website}`}</p>
-
-                <button>View Album</button>
-            </li>
-        )
-
+        if (this.props.user){
+            return(
+                <li className="album-item">
+                    <h2>{this.props.album.title}</h2>
+                    <img className='album-cover' alt=""/>
+                    <p>Album owner: {`${this.props.user.name}`}</p>
+                    <p>Email: {`${this.props.user.email}`}</p>
+                    <p>Website: {`${this.props.user.website}`}</p>
+    
+                    <button>View Album</button>
+                </li>
+            )
+        }else{
+            return null;
+        }
     }
 
 
