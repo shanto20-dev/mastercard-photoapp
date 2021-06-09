@@ -1,3 +1,8 @@
+ # ! IMPORTANT: To run the app, run 'npm install' and then 'npm start' in your terminal !
+
+
+
+
 
 # Summary of what has been developed:
 
