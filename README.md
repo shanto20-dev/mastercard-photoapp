@@ -1,4 +1,4 @@
- # ! IMPORTANT: To run the app, run 'npm install' and then 'npm start' in your terminal !
+ # ! IMPORTANT: To run the app, clone the repo, run 'npm install' and then 'npm start' in your terminal !
 
 
 
