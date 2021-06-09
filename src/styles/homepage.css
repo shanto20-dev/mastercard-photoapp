@@ -11,6 +11,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 5%;
 }
 
 .album-list p{
@@ -19,14 +20,27 @@ ul{
 
 .album-list li{
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     margin-bottom: 5%;
-    margin-left: 20%;
+    margin-left: 15%;
+}
+
+.album-list img{
+    height: 200px;
+    width: 450px;
+    border-radius: 7px;
+    margin-right: 50px;
 }
 
 .album-list button{
     margin-top: 75px;
     padding: 10px 20px 10px 20px;
+}
+
+
+.album-item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
