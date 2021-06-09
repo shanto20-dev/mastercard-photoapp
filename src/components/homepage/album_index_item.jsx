@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../../styles/homepage.css'
+import { Link } from 'react-router-dom';
 
 class AlbumIndexItem extends Component{
 
@@ -33,7 +34,7 @@ class AlbumIndexItem extends Component{
                         <p>Album owner: {`${this.props.user.name}`}</p>
                         <p>Email: {`${this.props.user.email}`}</p>
                         <p>Website: {`${this.props.user.website}`}</p>
-                        <button>View Album</button>
+                        <Link to={`/albums/${this.props.album.id}`}><button>View Album</button></Link>
                     </div>
     
                 </li>

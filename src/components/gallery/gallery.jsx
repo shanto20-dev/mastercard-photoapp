@@ -1,14 +1,12 @@
 import React,{Component} from 'react';
-import '../../styles/homepage.css';
-import AlbumIndex from './album_index.jsx';
+import '../../styles/gallery.css';
 
-
-class Homepage extends Component{
+class Gallery extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
-            albums: [],
+            photos: [],
             users: {}
         }
     }
@@ -56,4 +54,4 @@ class Homepage extends Component{
 
 }
 
-export default Homepage
+export default Gallery

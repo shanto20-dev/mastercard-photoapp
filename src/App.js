@@ -1,14 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import './styles/navbar.css';
+import { Route, Switch } from "react-router-dom";
 import Homepage from './components/homepage/homepage';
 import Navbar from './components/navbar/navbar';
+import Gallery from './components/gallery/gallery';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Homepage />
+        <Navbar/>
+      <Switch>
+        <Route exact path="/album" component={Gallery} />
+        <Route path='/' component={Homepage} />
+      </Switch>
     </div>
   );
 }
