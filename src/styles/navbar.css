@@ -1,4 +1,12 @@
 .navbar-div{
-    color: red;
+    color: black;
+    font-size: 17px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #A9D8D7;
+}
 
+.navbar-div h1{
+    margin-left: 15%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
