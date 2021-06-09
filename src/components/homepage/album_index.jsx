@@ -13,6 +13,7 @@ class AlbumIndex extends Component{
 
 
     render(){
+        console.log(this.props.users);
         return(
             <>
             <h2>Album List</h2>
@@ -21,6 +22,7 @@ class AlbumIndex extends Component{
                     return <AlbumIndexItem
                         key={index}
                         album={album}
+                        users={this.props.users}
                         />
                 })}
             </ul>

@@ -12,14 +12,15 @@ class AlbumIndexItem extends Component{
 
 
     render(){
-        console.log(this.props);
+        let albumOwner = this.props.users[this.props.album.userId];
+        console.log(albumOwner);
         return(
             <li className="album-item">
                 <h2>{this.props.album.title}</h2>
                 <img className='album-cover' alt=""/>
-                <p>Album owner:</p>
-                <p>Email:</p>
-                <p>Website: </p>
+                <p>Album owner: {`${albumOwner.name}`}</p>
+                <p>Email: {`${albumOwner.email}`}</p>
+                <p>Website: {`${albumOwner.website}`}</p>
 
                 <button>View Album</button>
             </li>

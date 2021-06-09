@@ -7,7 +7,8 @@ class Homepage extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            albums: []
+            albums: [],
+            users: {}
         }
     }
 
@@ -17,11 +18,19 @@ class Homepage extends Component{
             .then(response => response.json())
             .then(json => this.setState({albums: json}))
 
+        fetch('https://jsonplaceholder.typicode.com/users/')
+            .then(response => response.json())
+            .then(json => {
+                let usersObject =  {}
+                json.forEach(user => {
+                    usersObject[user.id] = user;
+                })
+                this.setState({users: usersObject})
+            });
     }
 
 
     render(){
-        console.log(this.state.albums);
         return(
             <>
             <div>
@@ -31,6 +40,7 @@ class Homepage extends Component{
             <div>
                 <AlbumIndex
                     albums={this.state.albums}
+                    users={this.state.users}
                 />
             </div>
             </>
