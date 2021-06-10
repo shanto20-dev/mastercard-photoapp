@@ -37,5 +37,6 @@
 # Problems?
 
 - No real road-bumps or problems. I did have to take a break in the middle because of other interviewing processes going on, but I was able to jump right back into the action when I was done.
+- Note: I used a blank 'create-react-app' on my computer that was run 9 days ago - it was completely untouched. I only started this challenge today and completed it within 3-4 hours. This is visible in the commits that I've performed.
 
 This was a fun challenge! Always love using React.
